@@ -1,0 +1,41 @@
+1. Install Required Libraries
+    pip install keyboard
+2. Adjust Script Paths
+    script_path_flyswatter = "/home/yourusername/Desktop/flyswatter_macro.py"
+    script_path_kill = "/home/yourusername/Desktop/kill.py"
+3. Update the Script
+    # run_lights.py
+
+    import keyboard
+    import subprocess
+
+    def run_script_flyswatter():
+        # Path to the flyswatter_macro.py script
+        script_path_flyswatter = "/home/yourusername/Desktop/flyswatter_macro.py"
+        # Run the script using subprocess
+        subprocess.run(["python3", script_path_flyswatter])
+
+    def run_script_kill():
+        # Path to the kill.py script
+        script_path_kill = "/home/yourusername/Desktop/kill.py"
+        # Run the script using subprocess
+        subprocess.run(["python3", script_path_kill])
+
+    # Set up a keyboard hotkey
+    keyboard.add_hotkey('c', run_script_flyswatter)
+    keyboard.add_hotkey('a', run_script_kill)
+
+    # Wait indefinitely until "esc" is pressed
+    keyboard.wait('esc')
+4. Running Python Sripts with Python 3
+    ensure the use of python3 in the suprocess.run calls
+5. Running the Script with Sudo
+    sudo python3 run_lights.py
+6. Install Additonal Dependencies if needed
+    if theres issues with the keyboard lib
+    try pynput or xbindkeys with xdotool
+7. Make Scripts Executables
+    chmod +x /home/yourusername/Desktop/flyswatter_macro.py
+    chmod +x /home/yourusername/Desktop/kill.py
+8. Check on the Keyboard module limitations
+    May run into issues iwth "keyboard" lib
